@@ -59,7 +59,7 @@ const ChatScreen = () => {
   }
   //console.log(users);
   useEffect(() => {
-    fetchUserData();
+    //fetchUserData();
   }, []);
 
   // useEffect(() => {
