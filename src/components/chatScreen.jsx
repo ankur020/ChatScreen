@@ -55,11 +55,12 @@ const ChatScreen = () => {
   // }
   function handleChats() {
     setPage((prevPage) => prevPage + 1);
+    fetchUserData();
   }
   //console.log(users);
   useEffect(() => {
     fetchUserData();
-  }, [page]);
+  }, []);
 
   // useEffect(() => {
   //   window.addEventListener("scroll", handleScroll);
