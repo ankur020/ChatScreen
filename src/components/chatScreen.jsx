@@ -28,25 +28,7 @@ const ChatScreen = () => {
 
   //let api = "https://3.111.128.67/assignment/chat?page=0";
 
-  const fetchUserData = async () => {
-    try {
-      const res = await fetch(
-        `https://3.111.128.67/assignment/chat?page=${page}`
-      );
-      const data1 = await res.json();
-      const data2 = data1 && data1.chats;
-      console.log(data2);
-      //console.log(data);
-      setUsers((prevData) => {
-        return { ...prevData, ...data1 };
-      });
-      if (messagesRef.current) {
-        messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  
 
   // function handleScroll() {
   //   if (messagesRef.current.scrollTop === 0) {
@@ -55,12 +37,31 @@ const ChatScreen = () => {
   // }
   function handleChats() {
     setPage((prevPage) => prevPage + 1);
-    fetchUserData();
+    //fetchUserData();
   }
   //console.log(users);
   useEffect(() => {
-    //fetchUserData();
-  }, []);
+    const fetchUserData = async () => {
+      try {
+        const res = await fetch(
+          `https://3.111.128.67/assignment/chat?page=${page}`
+        );
+        const data1 = await res.json();
+        const data2 = data1 && data1.chats;
+        console.log(data2);
+        //console.log(data);
+        setUsers((prevData) => {
+          return { ...prevData, ...data1 };
+        });
+        if (messagesRef.current) {
+          messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchUserData();
+  }, [page]);
 
   // useEffect(() => {
   //   window.addEventListener("scroll", handleScroll);
