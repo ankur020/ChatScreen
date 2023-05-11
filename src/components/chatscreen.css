@@ -1,0 +1,249 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(248, 246, 244);
+}
+header {
+  display: flex;
+  justify-content: flex-start;
+  font-size: medium;
+}
+.head {
+  display: flex;
+  flex-direction: row;
+
+  border-bottom: 1px solid lightgray;
+  height: 50px;
+  margin-bottom: 40px;
+}
+.from-to{
+  margin-bottom: 10px;
+}
+.from{
+  color: rgb(129, 129, 129);
+  font-size:large;
+}
+.from-name{
+  font-size: larger;
+}
+.to{
+  color: rgb(129, 129, 129);
+  font-size: large;
+}
+.to-name{
+  font-size: larger;
+}
+img {
+  height: 2.5rem;
+  flex: 2;
+  background-color: black;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.dots button{
+  background-color: rgb(248, 246, 244);
+  border: none;
+}
+.dots button:hover{
+  cursor: pointer;
+}
+.dropdown{
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-start; */
+  position: absolute;
+  top: 6.5rem;
+  right: 1rem;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px;
+}
+.dropdown ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+.dropdown ul li{
+  /* border-bottom: 1px solid lightgray; */
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+/* .chat-img img{
+    width: 30px;
+    height: 30px;
+} */
+.from-to {
+  flex: 10;
+}
+.three-dot {
+  flex: 1;
+}
+.chat-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chatbox {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+  margin: 10px 0;
+}
+.chat-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chat-box button{
+  background-color: white;
+  border: none;
+  height: 30px;
+  width: 100px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+}
+.chat-box button:hover{
+  cursor: pointer;
+}
+.time {
+  display: flex;
+  justify-content: center;
+}
+.imgg {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.true {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.true img {
+  display: none;
+}
+.true .msg {
+  margin-right: 5px;
+  padding: 10px;
+  background-color: #4361ee;
+  border-radius: 10px 10px 2px 10px;
+  color: white;
+  width: 80%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.false {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.false .msg {
+  width: 70%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 2px 10px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.li-time {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  border-color: rgb(187, 186, 186);
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+  color: rgb(187, 186, 186);
+}
+.li-time span {
+  background-color: rgb(248, 246, 244);
+  padding: 0 10px;
+}
+.msg {
+  display: flex;
+  flex-direction: column;
+}
+.msg .only-time {
+  display: flex;
+  justify-content: flex-end;
+  color: rgb(167, 165, 165);
+}
+.input-box form {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 20px;
+  border-top-style: none;
+  padding: 10px;
+  margin-top: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.input-box form input {
+  flex: 15;
+  border: none;
+  outline: none;
+  background-color: white;
+  height: 20px;
+  border-radius: 20px;
+  /* gap: 10px; */
+}
+.input-box form button {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: white;
+  border-radius: 20px;
+  /* height: 10px; */
+}
+.input-box form button:hover{
+    cursor: pointer;
+}
+.dropup{
+  position: relative;
+  display: inline-block;
+}
+.attach{
+  margin: 0;
+  padding: 0;
+  /* position: absolute; */
+  bottom: 1rem;
+  right: 4rem;
+
+}
+.attach ul{
+  position: absolute;
+  bottom: 2.5rem;
+  right: 0.000001px;
+  width: 10rem;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  background-color: green;
+  border-radius: 20px;
+  height: 40px;
+  justify-content:space-around;
+  align-items: center;
+  color: white;
+}
+.attach ul button{
+  background-color: green;
+  color: white;
+}
+.attach ul button:hover{
+    cursor: pointer;
+}
