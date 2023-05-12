@@ -30,15 +30,15 @@ const ChatScreen = () => {
 
   //let api = "https://3.111.128.67/assignment/chat?page=0";
 
-  // function handleScroll() {
-  //   if (messagesRef.current.scrollTop === 0) {
-  //     setPage((prevPage) => prevPage + 1);
-  //   }
-  // }
-  function handleChats() {
-    setPage((prevPage) => prevPage + 1);
-    //fetchUserData();
+  function handleScroll() {
+    if (messagesRef.current.scrollTop === 0) {
+      setPage((prevPage) => prevPage + 1);
+    }
   }
+  // function handleChats() {
+  //   setPage((prevPage) => prevPage + 1);
+  //   //fetchUserData();
+  // }
   //console.log(users);
   useEffect(() => {
     const fetchUserData = async () => {
@@ -52,16 +52,17 @@ const ChatScreen = () => {
         setUsers((prevData) => {
           return { ...prevData, ...data1 };
         });
-        if (messagesRef.current) {
-          messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
-        }
+
         setLoading(false);
       } catch (error) {
         console.log(error);
       }
     };
+
     fetchUserData();
   }, [page]);
+
+  //console.log(chatData);
 
   // useEffect(() => {
   //   window.addEventListener("scroll", handleScroll);
@@ -121,12 +122,12 @@ const ChatScreen = () => {
       <div
         ref={messagesRef}
         style={{ height: "60vh", overflowY: "scroll" }}
-        //onScroll={handleScroll}
+        onScroll={handleScroll}
         className="chat-box"
       >
-        <div>
+        {/* <div>
           <button onClick={handleChats}>Next Page</button>
-        </div>
+        </div> */}
         {isLoading ? <h1>Loading...</h1> : <ChatBox props={users} />}
       </div>
 
