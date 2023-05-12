@@ -9,10 +9,12 @@ import {
   BsCamera,
   BsCameraVideo,
 } from "react-icons/bs";
-import { BiGroup } from "react-icons/bi";
+import { BiGroup, BiArrowBack } from "react-icons/bi";
 import { GoReport } from "react-icons/go";
 import { TiDocumentText } from "react-icons/ti";
-//import ChatBox from "./ChatBox";
+import { FaRegEdit } from "react-icons/fa";
+import ChatBox from "./ChatBox";
+//const ChatBox = lazy(() => import("./ChatBox"));
 
 const ChatScreen = () => {
   const [users, setUsers] = useState(null);
@@ -21,14 +23,12 @@ const ChatScreen = () => {
   const [open, setOpen] = useState(false);
   const [page, setPage] = useState(0);
   const messagesRef = useRef(null);
-
+  const [isLoading, setLoading] = useState(false);
   const handleChange = (e) => {
     setMsg(e.target.value);
   };
 
   //let api = "https://3.111.128.67/assignment/chat?page=0";
-
-  
 
   // function handleScroll() {
   //   if (messagesRef.current.scrollTop === 0) {
@@ -43,19 +43,19 @@ const ChatScreen = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
+        setLoading(true);
         const res = await fetch(
           `https://3.111.128.67/assignment/chat?page=${page}`
         );
         const data1 = await res.json();
-        const data2 = data1 && data1.chats;
-        console.log(data2);
-        //console.log(data);
+
         setUsers((prevData) => {
           return { ...prevData, ...data1 };
         });
         if (messagesRef.current) {
           messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
         }
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -71,7 +71,14 @@ const ChatScreen = () => {
   return (
     <div className="container">
       <header>
-        <h1>{users && users.name}</h1>
+        <button className="back-arrow">
+          <BiArrowBack />
+        </button>
+        {isLoading ? <h2>Loading...</h2> : <h1>{users && users.name}</h1>}
+
+        <button>
+          <FaRegEdit />
+        </button>
       </header>
       <div className="head">
         <div className="chat-img">
@@ -113,39 +120,14 @@ const ChatScreen = () => {
 
       <div
         ref={messagesRef}
-        style={{ height: "65vh", overflowY: "scroll" }}
+        style={{ height: "60vh", overflowY: "scroll" }}
         //onScroll={handleScroll}
         className="chat-box"
       >
         <div>
           <button onClick={handleChats}>Next Page</button>
         </div>
-        <div>
-          {users && (
-            <ul>
-              {users.chats.map((item) => (
-                <div className="chatbox">
-                  <div className="time">
-                    <li key={item.id} className="li-time">
-                      <span>{item.time.toString().slice(0, 10)}</span>
-                    </li>
-                  </div>
-                  <div className={item.sender.self.toString()}>
-                    <div>
-                      <img src={item.sender.image} alt="" className="imgg" />
-                    </div>
-                    <div className="msg">
-                      <span>{item.message}</span>
-                      <span className="only-time">
-                        {item.time.toString().slice(11, 16)}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </ul>
-          )}
-        </div>
+        {isLoading ? <h1>Loading...</h1> : <ChatBox props={users} />}
       </div>
 
       <div className="input-box">

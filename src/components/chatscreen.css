@@ -1,5 +1,5 @@
-*{
-  font-family: 'Poppins', sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
 }
 body {
   display: flex;
@@ -11,7 +11,18 @@ body {
 header {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   font-size: medium;
+}
+header button {
+  flex: 1;
+  background-color: rgb(248, 246, 244);
+  border: none;
+  outline: none;
+  font-size:xx-large;
+}
+header h1{
+  flex: 20;
 }
 .head {
   display: flex;
@@ -21,21 +32,21 @@ header {
   height: 50px;
   margin-bottom: 40px;
 }
-.from-to{
+.from-to {
   margin-bottom: 10px;
 }
-.from{
-  color: rgb(129, 129, 129);
-  font-size:large;
-}
-.from-name{
-  font-size: larger;
-}
-.to{
+.from {
   color: rgb(129, 129, 129);
   font-size: large;
 }
-.to-name{
+.from-name {
+  font-size: larger;
+}
+.to {
+  color: rgb(129, 129, 129);
+  font-size: large;
+}
+.to-name {
   font-size: larger;
 }
 img {
@@ -46,14 +57,14 @@ img {
   margin-right: 5px;
   margin-bottom: 5px;
 }
-.dots button{
+.dots button {
   background-color: rgb(248, 246, 244);
   border: none;
 }
-.dots button:hover{
+.dots button:hover {
   cursor: pointer;
 }
-.dropdown{
+.dropdown {
   /* display: flex;
   flex-direction: column;
   justify-content: flex-start; */
@@ -65,13 +76,12 @@ img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 10px;
 }
-.dropdown ul{
+.dropdown ul {
   list-style: none;
   margin: 0;
   padding: 0;
-
 }
-.dropdown ul li{
+.dropdown ul li {
   /* border-bottom: 1px solid lightgray; */
   padding: 5px;
   display: flex;
@@ -101,12 +111,12 @@ img {
   gap: 10px;
   margin: 10px 0;
 }
-.chat-box{
+.chat-box {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.chat-box button{
+.chat-box button {
   background-color: white;
   border: none;
   height: 30px;
@@ -114,12 +124,17 @@ img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
 }
-.chat-box button:hover{
+.chat-box button:hover {
   cursor: pointer;
 }
 .time {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
+}
+.img-verify{
+  width: 50px;
+  position: relative;
 }
 .imgg {
   border-radius: 50%;
@@ -136,6 +151,7 @@ img {
   display: none;
 }
 .true .msg {
+  margin-top: 5px;
   margin-right: 5px;
   padding: 10px;
   background-color: #4361ee;
@@ -147,9 +163,10 @@ img {
 .false {
   display: flex;
   justify-content: flex-start;
-  gap: 10px;
+  
 }
 .false .msg {
+  margin: 5px 5px;
   width: 70%;
   padding: 10px;
   background-color: white;
@@ -187,7 +204,6 @@ img {
   padding: 10px;
   margin-top: 30px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
 }
 .input-box form input {
   flex: 15;
@@ -206,22 +222,21 @@ img {
   border-radius: 20px;
   /* height: 10px; */
 }
-.input-box form button:hover{
-    cursor: pointer;
+.input-box form button:hover {
+  cursor: pointer;
 }
-.dropup{
+.dropup {
   position: relative;
   display: inline-block;
 }
-.attach{
+.attach {
   margin: 0;
   padding: 0;
   /* position: absolute; */
   bottom: 1rem;
   right: 4rem;
-
 }
-.attach ul{
+.attach ul {
   position: absolute;
   bottom: 2.5rem;
   right: 0.000001px;
@@ -236,14 +251,22 @@ img {
   background-color: green;
   border-radius: 20px;
   height: 40px;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   color: white;
 }
-.attach ul button{
+.attach ul button {
   background-color: green;
   color: white;
 }
-.attach ul button:hover{
-    cursor: pointer;
+.attach ul button:hover {
+  cursor: pointer;
+}
+.verify{
+  position: relative;
+  left: 1.6rem;
+  bottom: 1.5rem;
+  color: blue;
+  background-color: rgb(248, 246, 244);
+  border-radius: 70%;
 }
